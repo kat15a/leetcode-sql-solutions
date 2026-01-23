@@ -7,7 +7,7 @@ It highlights my ability to write **clean, correct, and interview-ready SQL quer
 ---
 
 
-## 🛠 Skills Demonstrated
+## Skills Demonstrated
 - SQL (MySQL)
 - Data filtering & aggregation
 - JOINs and subqueries
