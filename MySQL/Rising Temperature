@@ -1,0 +1,13 @@
+-- LeetCode 197: Rising Temperature
+-- Difficulty: Easy
+-- Database: PostgreSQL
+-- Topic: Self Join, Date Difference, EXISTS
+
+SELECT today.id
+FROM Weather AS today
+WHERE EXISTS (
+    SELECT 1
+    FROM Weather AS yesterday
+    WHERE yesterday.temperature < today.temperature
+      AND today.recordDate - yesterday.recordDate = 1
+);
