@@ -1,0 +1,13 @@
+-- LeetCode 1731: The Number of Employees Which Report to Each Employee
+-- Difficulty: Easy
+-- Topic: SELF JOIN, GROUP BY, COUNT, AVG
+
+SELECT e1.employee_id,
+       e1.name,
+       COUNT(e2.employee_id) AS reports_count,
+       ROUND(AVG(e2.age), 0) AS average_age
+FROM Employees e1
+JOIN Employees e2
+  ON e1.employee_id = e2.reports_to
+GROUP BY e1.employee_id, e1.name
+ORDER BY e1.employee_id;
