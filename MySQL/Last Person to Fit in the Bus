@@ -1,0 +1,11 @@
+-- LeetCode 1204: Last Person to Fit in the Bus
+-- Approach: Self Join + Cumulative Sum using GROUP BY and HAVING
+
+SELECT q1.person_name
+FROM Queue q1
+INNER JOIN Queue q2
+    ON q1.turn >= q2.turn
+GROUP BY q1.turn, q1.person_name
+HAVING SUM(q2.weight) <= 1000
+ORDER BY q1.turn DESC
+LIMIT 1;
