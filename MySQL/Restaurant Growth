@@ -1,0 +1,7 @@
+WITH daily AS (
+    SELECT
+        visited_on,
+        SUM(amount) AS amount
+    FROM Customer
+    GROUP BY visited_on
+)
